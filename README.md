@@ -43,10 +43,4 @@ Bu uygulama, [Bluesky](https://bsky.social) sosyal ağı üzerindeki takipçi ve
 - Bluesky API’sinde günlük limitler olabilir. Çok sayıda işlem yaparken hata alırsanız bir süre bekleyin.
 - Maksimum 5000 takipçi / takip edilen verisiyle sınırlıdır (performans nedenleriyle).
 
-## Katkıda Bulunma
 
-Geliştirmelere ve hataları düzeltmeye her zaman açığız. Pull request'ler ve issue'lar hoş geldiniz!
-
-## Lisans
-
-MIT License
