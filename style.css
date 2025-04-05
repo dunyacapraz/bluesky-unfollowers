@@ -1,0 +1,219 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9f5fe; /* Daha hafif bir mavi tonu */
+    color: #2c3e50; /* Daha okunabilir bir metin rengi */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto; /* İçerik taşarsa kaydırma çubuğu gösterir */
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px; /* Daha yuvarlak köşeler */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Daha belirgin bir gölge */
+    padding: 40px; /* Daha fazla iç boşluk */
+    width: 95%;
+    max-width: 700px; /* Biraz daha genişletildi */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #1d9bf0;
+    margin-bottom: 15px;
+    font-size: 2.2em; /* Daha büyük başlık */
+}
+
+header p {
+    color: #777;
+    font-size: 1em;
+    line-height: 1.6; /* Daha iyi okunabilirlik için satır yüksekliği */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Daha fazla boşluk */
+    margin-bottom: 30px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 14px;
+    border: 1px solid #ccc; /* Daha belirgin kenarlık */
+    border-radius: 8px; /* Daha yuvarlak giriş alanları */
+    font-size: 1.1em;
+    transition: border-color 0.3s ease; /* Kenarlık rengi geçişi */
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #1d9bf0; /* Odaklandığında mavi kenarlık */
+    outline: none; /* Varsayılan odak çerçevesini kaldır */
+    box-shadow: 0 0 6px rgba(29, 155, 240, 0.3); /* Hafif bir odak gölgesi */
+}
+
+.login-form button {
+    background-color: #1d9bf0;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #0d76c1;
+}
+
+#progress-container {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    height: 8px; /* Biraz daha kalın */
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+#progress {
+    background-color: #1d9bf0;
+    height: 8px;
+    width: 0%;
+    border-radius: 8px;
+    transition: width 0.2s ease-out;
+}
+
+#results-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Biraz daha geniş kartlar */
+    gap: 20px;
+}
+
+.user-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hafif animasyon */
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd; /* Avatar için hafif kenarlık */
+}
+
+.user-card span {
+    flex-grow: 1;
+    font-size: 1.1em;
+    color: #333;
+    word-break: break-word; /* Uzun kullanıcı adlarını satır sonuna sığdır */
+}
+
+.user-card button.unfollow-btn {
+  background-color: #dc3545 !important; /* Kırmızı renk */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.user-card button.unfollow-btn:hover {
+  background-color: #c82333 !important; /* Hover efekti */
+}
+
+#no-results {
+    color: #777;
+    font-style: italic;
+    font-size: 1.1em;
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#loginForm { transition: opacity 0.3s; }
+.user-card { transition: all 0.3s; }
+
+#unfollowAllBtn {
+    background-color: #dc3545; /* Kırmızı renk */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px; /* Butonun altında biraz boşluk bırakır */
+}
+
+#unfollowAllBtn:hover {
+    background-color: #c82333; /* Hover efekti için biraz daha koyu kırmızı */
+}
+
+#unfollowAllBtn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+#followBackAllBtn {
+    background-color: #1d9bf0; /* Mavi renk */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px; /* Butonun altında biraz boşluk bırakır */
+}
+
+#followBackAllBtn:hover {
+    background-color: #0d76c1; /* Hover efekti için biraz daha koyu mavi */
+}
+
+.follow-back-btn {
+    background-color: #1d9bf0; /* Mavi renk */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.follow-back-btn:hover {
+    background-color: #0d76c1; /* Hover efekti için biraz daha koyu mavi */
+}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluesky Takip Etmeyenler</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hidden {
+      display: none !important;
+    }
+    /* Çıkış butonu için ek stil */
+    #logoutBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #logoutBtn:hover {
+      background: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button id="logoutBtn" class="hidden">Çıkış Yap</button>
+      <h1>Takip Etmeyenleri Bul</h1>
+      <p>
+        Bluesky hesabınızla giriş yaparak sizi takip etmeyen ve sizi takip eden ama sizin takip etmediğiniz kullanıcıları görüntüleyebilirsiniz.
+        <a href="https://bsky.app/settings/app-passwords" target="_blank">Uygulama Parolası Almak İçin.</a>
+      </p>
+    </header>
+
+    <div class="login-form" id="loginForm">
+      <input type="text" id="handle" placeholder="Kullanıcı Adı">
+      <input type="password" id="appPassword" placeholder="Uygulama Parolası (AppPassword)">
+      <button id="loadBtn">Yükle</button>
+    </div>
+
+    <div id="progress-container">
+      <div id="progress"></div>
+    </div>
+
+    <section id="results-section">
+      <div class="button-container hidden">
+        <button id="unfollowAllBtn">Tümünü Takipten Çık</button>
+        <button id="followBackAllBtn">Tümünü Geri Takip Et</button>
+      </div>
+
+      <h2 class="hidden">Takip Etmeyenler</h2>
+      <div id="results"></div>
+      <p id="no-results" class="hidden">Takip etmeyen kimse bulunamadı.</p>
+
+      <h2 class="hidden" id="followBackHeading">Sizi Takip Ediyor (Sizin Takip Etmediğiniz)</h2>
+      <div id="followBackResults"></div>
+      <p id="no-follow-backs" class="hidden">Sizi takip eden ama sizin takip etmediğiniz kimse bulunamadı.</p>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
