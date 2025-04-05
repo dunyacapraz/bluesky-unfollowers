@@ -36,7 +36,7 @@ Bu uygulama, [Bluesky](https://bsky.social) sosyal ağı üzerindeki takipçi ve
 
 - Giriş bilgileriniz ve token'lar sadece tarayıcı içinde yerel olarak saklanır (localStorage).
 - Sunucu taraflı herhangi bir işlem yapılmaz.
-- Verileriniz üçüncü kişilerle paylaşılmaz.
+  
 
 ## Notlar
 
